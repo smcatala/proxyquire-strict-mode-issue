@@ -1,0 +1,49 @@
+{
+  "name": "proxyquire-strict-mode-issue",
+  "version": "1.0.0",
+  "description": "demonstration of strict-mode issue with proxyquire",
+  "main": "dist",
+  "scripts": {
+    "pretest": "mkdirp spec/reports && rimraf spec/reports/*",
+    "test": "karma start spec/karma.conf.js --single-run",
+    "pretest:web": "rimraf spec/web/*.js",
+    "test:web": "browserify spec/index-*.spec.js -p [ 'proxyquire-universal' ] -o spec/web/index.spec.js && npm run test:web:serve",
+    "test:web:serve": "http-server -c-1 -o -p 6510 spec/web"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smcatala/proxyquire-strict-mode-issue.git"
+  },
+  "keywords": [
+    "proxyquire",
+    "strict-mode"
+  ],
+  "author": {
+    "name": "Stephane M. Catala",
+    "email": "smcatala@gamil.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smcatala/proxyquire-strict-mode-issue/issues"
+  },
+  "homepage": "https://github.com/smcatala/proxyquire-strict-mode-issue#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "eslint": "^3.1.1",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.2",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-spec-reporter": "^0.0.26",
+    "mkdirp": "^0.5.1",
+    "proxyquire": "^1.7.10",
+    "proxyquire-universal": "^1.0.8",
+    "proxyquireify": "^3.2.1",
+    "rimraf": "^2.5.4",
+    "watchify": "^3.7.0"
+  }
+}
